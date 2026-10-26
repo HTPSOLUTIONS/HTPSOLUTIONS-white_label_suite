@@ -18,5 +18,6 @@
             'white_label_kit_pos/static/src/v17_19/*',
         ],
     },
+    'images': ['static/description/banner.png'],
     'installable': True,
 }
