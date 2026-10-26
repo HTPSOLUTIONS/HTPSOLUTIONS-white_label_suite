@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <!-- “About” block of the general settings -->
+    <t t-name="htp_white_label.About">
+        <Setting addLabel="false">
+            <div class="user-heading">
+                <h3 class="px-0"><t t-out="this.wl.name"/></h3>
+            </div>
+            <div class="text-muted o_web_settings_compact_subtitle">
+                <small>Version <t t-out="this.serverVersion"/>
+                    <t t-if="this.wl.website"> · <a t-att-href="this.wl.website" target="_blank" rel="noopener"><t t-out="this.wl.website"/></a></t>
+                </small>
+            </div>
+            <div class="text-muted o_web_settings_compact_subtitle o_wl_copyright">
+                <small>Copyright © 2004 Odoo S.A. · GNU LGPL Licensed</small>
+            </div>
+        </Setting>
+    </t>
+
+    <!-- Systray: back to the home dashboard -->
+    <t t-name="htp_white_label.SystrayHome">
+        <div class="o_wl_systray_home" title="Home" role="button" t-on-click="() => this.openHome()">
+            <span class="wl-icon wl-icon-apps"/>
+        </div>
+    </t>
+
+    <!-- Branded home dashboard -->
+    <t t-name="htp_white_label.HomeDashboard">
+        <div class="o_action o_wl_home" t-att-class="this.backgroundClass">
+            <div class="o_wl_home_inner">
+                <div class="text-center">
+                    <div class="o_wl_home_logo mb-3" t-if="this.wl.home_logo and this.wl.logo_url"
+                         t-attf-style="text-align: {{this.wl.home_logo}};">
+                        <img t-att-src="this.wl.logo_url" t-att-alt="this.wl.name"/>
+                    </div>
+                    <t t-if="this.wl.home_greeting">
+                        <div class="o_wl_home_greeting" t-out="this.greeting"/>
+                        <div class="o_wl_home_date text-capitalize" t-out="this.today"/>
+                    </t>
+                </div>
+                <div class="o_wl_home_search">
+                    <span class="wl-icon wl-icon-search"/>
+                    <input type="search" class="form-control" placeholder="Search an application…"
+                           t-att-value="this.state.search" t-on-input="(ev) => this.onSearch(ev)"
+                           t-on-keydown="(ev) => this.onSearchKeydown(ev)"/>
+                </div>
+                <div class="o_wl_home_apps">
+                    <t t-foreach="this.apps" t-as="app" t-key="app.id">
+                        <a href="#" class="o_wl_home_app" t-att-data-menu-xmlid="app.xmlid"
+                           t-on-click.prevent="() => this.open(app)">
+                            <div class="o_wl_home_app_icon">
+                                <img t-if="app.webIconData" t-att-src="this.iconSrc(app)" t-att-alt="app.name"/>
+                                <t t-else="" t-out="this.initials(app)"/>
+                            </div>
+                            <div class="o_wl_home_app_name" t-out="app.name"/>
+                        </a>
+                    </t>
+                </div>
+                <div t-if="!this.apps.length" class="text-center mt-4">No application matches your search.</div>
+                <div class="o_wl_home_footer" t-out="this.wl.name"/>
+            </div>
+        </div>
+    </t>
+
+    <!-- White Label control dashboard -->
+    <t t-name="htp_white_label.Dashboard">
+        <div class="o_action o_wl_dashboard" t-att-style="this.previewStyle">
+            <div class="o_wl_dash_header d-flex flex-wrap align-items-center gap-3">
+                <span class="wl-icon wl-icon-sparkle fs-4" style="color: var(--wl-color)"/>
+                <div class="me-auto">
+                    <div class="fs-4 fw-bold lh-1">White Label</div>
+                    <div class="text-muted small">Make your Odoo look like your company.</div>
+                </div>
+                <label class="o_wl_master_switch form-check form-switch m-0" t-att-class="{'o_wl_on': this.state.values.enabled}">
+                    <input class="form-check-input" type="checkbox" role="switch" t-att-checked="this.state.values.enabled"
+                           t-on-change="(ev) => this.onToggle('enabled', ev)"/>
+                    <span class="form-check-label fw-semibold">Apply my branding</span>
+                </label>
+                <span t-if="this.state.dirty" class="badge text-bg-warning d-none d-md-inline">Unsaved changes</span>
+                <button class="btn btn-secondary" t-att-disabled="!this.state.dirty || this.state.saving"
+                        t-on-click="() => this.discard()">Discard</button>
+                <button class="btn btn-primary" t-att-disabled="!this.state.dirty || this.state.saving"
+                        t-on-click="() => this.save()">
+                    <span class="wl-icon wl-icon-check me-1"/>Save
+                </button>
+            </div>
+            <div t-if="!this.state.loading and !this.state.values.enabled" class="o_wl_off_notice">
+                <span class="wl-icon wl-icon-eye_off me-2"/>
+                <span>Your branding is off: Odoo keeps its standard look. Choose your settings, switch on “Apply my branding”, then save.</span>
+            </div>
+            <div t-if="this.state.loading" class="p-5 text-center text-muted">Loading…</div>
+            <div t-else="" class="o_wl_dash_body">
+                <!-- navigation -->
+                <nav class="o_wl_dash_nav">
+                    <t t-foreach="this.sections" t-as="section" t-key="section.id">
+                        <button t-att-class="{'active': this.state.section === section.id}"
+                                t-att-data-section="section.id"
+                                t-on-click="() => this.state.section = section.id">
+                            <span t-attf-class="wl-icon wl-icon-{{section.icon}}"/>
+                            <span t-out="section.label"/>
+                        </button>
+                    </t>
+                </nav>
+
+                <!-- settings -->
+                <div class="o_wl_dash_main">
+                    <t t-if="this.state.section === 'identity'">
+                        <div class="o_wl_card">
+                            <h4>Your brand</h4>
+                            <div class="o_wl_card_sub">Shown instead of “Odoo” in the browser tab, the interface and the e-mails.</div>
+                            <div class="row">
+                                <div class="col-md-6 o_wl_field">
+                                    <label for="wl_brand_name">Brand name</label>
+                                    <input id="wl_brand_name" class="form-control" t-att-value="this.state.values.brand_name"
+                                           t-on-input="(ev) => this.onInput('brand_name', ev)" placeholder="My Company"/>
+                                </div>
+                                <div class="col-md-6 o_wl_field">
+                                    <label for="wl_color">Brand color</label>
+                                    <div class="d-flex gap-2">
+                                        <input type="color" class="form-control form-control-color" t-att-value="this.state.values.color"
+                                               t-on-input="(ev) => this.onColor(ev)"/>
+                                        <input id="wl_color" class="form-control" t-att-value="this.state.values.color"
+                                               t-on-input="(ev) => this.onColor(ev)" placeholder="#2c3e50"/>
+                                    </div>
+                                    <label class="form-check form-switch mt-2 mb-0">
+                                        <input class="form-check-input" type="checkbox" role="switch" t-att-checked="this.state.values.color_navbar"
+                                               t-on-change="(ev) => this.onToggle('color_navbar', ev)"/>
+                                        <span class="form-check-label small">Apply it to the top bar and the main buttons</span>
+                                    </label>
+                                </div>
+                                <div class="col-md-6 o_wl_field">
+                                    <label for="wl_website">Website</label>
+                                    <input id="wl_website" class="form-control" t-att-value="this.state.values.brand_website"
+                                           t-on-input="(ev) => this.onInput('brand_website', ev)" placeholder="https://www.example.com"/>
+                                    <div class="form-text">Replaces the links to odoo.com.</div>
+                                </div>
+                                <div class="col-md-6 o_wl_field">
+                                    <label for="wl_support">Help / support link</label>
+                                    <input id="wl_support" class="form-control" t-att-value="this.state.values.support_url"
+                                           t-on-input="(ev) => this.onInput('support_url', ev)" placeholder="https://help.example.com"/>
+                                    <div class="form-text">“Help” entry of the user menu. Empty: the entry is removed.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="o_wl_card">
+                            <h4>Logo and icon</h4>
+                            <div class="o_wl_card_sub">The logo appears on the login page, the home screen and the e-mails. The icon is used in the browser tab and when Odoo is installed on a phone or a computer.</div>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label class="fw-semibold mb-2 d-block">Logo</label>
+                                    <div class="o_wl_image_picker">
+                                        <div class="o_wl_image_preview o_wl_wide"><img t-att-src="this.logoPreview" alt="Logo"/></div>
+                                        <div class="d-flex flex-column gap-1">
+                                            <button class="btn btn-sm btn-secondary" t-on-click="() => this.pickImage('logo')"><span class="wl-icon wl-icon-upload me-1"/>Upload</button>
+                                            <button t-if="this.imageUrl('logo')" class="btn btn-sm btn-link text-danger" t-on-click="() => this.removeImage('logo')">Use the company logo</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="fw-semibold mb-2 d-block">App icon (square)</label>
+                                    <div class="o_wl_image_picker">
+                                        <div class="o_wl_image_preview"><img t-att-src="this.iconPreview" alt="Icon"/></div>
+                                        <div class="d-flex flex-column gap-1">
+                                            <button class="btn btn-sm btn-secondary" t-on-click="() => this.pickImage('app_icon')"><span class="wl-icon wl-icon-upload me-1"/>Upload</button>
+                                            <button t-if="this.imageUrl('app_icon')" class="btn btn-sm btn-link text-danger" t-on-click="() => this.removeImage('app_icon')">Draw it from my initial</button>
+                                            <div t-else="" class="form-text">Without a picture, the icon shows the initial of your brand on your color.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="o_wl_card">
+                            <h4>Assistant</h4>
+                            <div class="o_wl_card_sub">OdooBot welcomes the users in Discuss: give it a name and a face that suit your company.</div>
+                            <div class="row g-4 align-items-center">
+                                <div class="col-md-6 o_wl_field mb-0">
+                                    <label for="wl_bot">Assistant name</label>
+                                    <input id="wl_bot" class="form-control" t-att-value="this.state.values.bot_name"
+                                           t-on-input="(ev) => this.onInput('bot_name', ev)" placeholder="Assistant"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="o_wl_image_picker">
+                                        <div class="o_wl_image_preview" style="border-radius: 50%; width: 72px; height: 72px;">
+                                            <img t-if="this.imageUrl('bot_avatar')" t-att-src="this.imageUrl('bot_avatar')" alt="Avatar"/>
+                                            <span t-else="" class="text-muted small">Avatar</span>
+                                        </div>
+                                        <div class="d-flex flex-column gap-1">
+                                            <button class="btn btn-sm btn-secondary" t-on-click="() => this.pickImage('bot_avatar')"><span class="wl-icon wl-icon-upload me-1"/>Upload</button>
+                                            <button t-if="this.imageUrl('bot_avatar')" class="btn btn-sm btn-link text-danger" t-on-click="() => this.removeImage('bot_avatar')">Remove</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+
+                    <t t-if="this.state.section === 'hide'">
+                        <div class="o_wl_card">
+                            <h4>“Powered by Odoo” footer</h4>
+                            <div class="o_wl_card_sub">Footer of the login page, the customer portal, the website, the surveys and the e-mails.</div>
+                            <div class="d-flex flex-wrap gap-4">
+                                <label class="form-check">
+                                    <input class="form-check-input" type="radio" name="wl_powered" value="hide"
+                                           t-att-checked="this.state.values.powered_by === 'hide'"
+                                           t-on-change="() => this.set('powered_by', 'hide')"/>
+                                    <span class="form-check-label">Hide it</span>
+                                </label>
+                                <label class="form-check">
+                                    <input class="form-check-input" type="radio" name="wl_powered" value="brand"
+                                           t-att-checked="this.state.values.powered_by === 'brand'"
+                                           t-on-change="() => this.set('powered_by', 'brand')"/>
+                                    <span class="form-check-label">“Powered by <t t-out="this.brandName"/>”</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="o_wl_card">
+                            <h4>Everything else</h4>
+                            <div class="o_wl_card_sub">Each option can be switched off on its own.</div>
+                            <t t-foreach="this.toggles" t-as="toggle" t-key="toggle.name">
+                                <label class="o_wl_toggle form-switch m-0" t-att-data-option="toggle.name">
+                                    <input class="form-check-input" type="checkbox" role="switch"
+                                           t-att-checked="this.state.values[toggle.name]"
+                                           t-on-change="(ev) => this.onToggle(toggle.name, ev)"/>
+                                    <span>
+                                        <div class="o_wl_toggle_title" t-out="toggle.title"/>
+                                        <div class="o_wl_toggle_help" t-out="toggle.help"/>
+                                    </span>
+                                </label>
+                            </t>
+                        </div>
+                    </t>
+
+                    <t t-if="this.state.section === 'home'">
+                        <div class="o_wl_card">
+                            <h4>Home screen</h4>
+                            <div class="o_wl_card_sub">The first screen after login: all the applications on your background, with your logo.</div>
+                            <label class="o_wl_toggle form-switch m-0">
+                                <input class="form-check-input" type="checkbox" role="switch" t-att-checked="this.state.values.home_dashboard"
+                                       t-on-change="(ev) => this.onToggle('home_dashboard', ev)" t-att-disabled="this.state.session.is_enterprise"/>
+                                <span>
+                                    <div class="o_wl_toggle_title">Open the branded home dashboard after login</div>
+                                    <div class="o_wl_toggle_help">
+                                        <t t-if="this.state.session.is_enterprise">Enterprise already has a home screen: its background follows the choice below once the “Enterprise home screen” module is enabled (Applications tab).</t>
+                                        <t t-else="">A grid of your applications with a search bar. A new button in the top bar brings you back to it.</t>
+                                    </div>
+                                </span>
+                            </label>
+                            <label class="o_wl_toggle form-switch m-0">
+                                <input class="form-check-input" type="checkbox" role="switch" t-att-checked="this.state.values.home_greeting"
+                                       t-on-change="(ev) => this.onToggle('home_greeting', ev)"/>
+                                <span>
+                                    <div class="o_wl_toggle_title">Greet the user</div>
+                                    <div class="o_wl_toggle_help">“Good morning, Marie” and today's date above the applications.</div>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="o_wl_card">
+                            <h4>Logo on the home screen</h4>
+                            <div class="o_wl_card_sub">Above the applications. It uses your logo (Identity tab) or the company logo.</div>
+                            <div class="o_wl_segmented mb-3" role="group">
+                                <t t-foreach="this.logoPositions" t-as="position" t-key="position.id">
+                                    <button type="button" class="btn btn-sm" t-att-data-position="position.id"
+                                            t-att-class="(this.state.values.home_logo_position || 'center') === position.id ? 'btn-primary' : 'btn-outline-secondary'"
+                                            t-on-click="() => this.set('home_logo_position', position.id)" t-out="position.label"/>
+                                </t>
+                            </div>
+                            <div class="o_wl_field mb-0" t-if="this.state.values.home_logo_position !== 'none'">
+                                <label for="wl_logo_size">Height: <strong><t t-out="this.state.values.home_logo_size || 64"/> px</strong></label>
+                                <input id="wl_logo_size" type="range" class="form-range" min="24" max="200" step="4"
+                                       t-att-value="this.state.values.home_logo_size || 64" t-on-input="(ev) => this.onLogoSize(ev)"/>
+                                <div class="d-flex justify-content-between form-text mt-0"><span>Small</span><span>Large</span></div>
+                            </div>
+                            <div t-if="!this.state.hasAnyLogo and !this.imageUrl('logo')" class="form-text">
+                                No logo yet: upload one in the Identity tab (or set the company logo) to show it here.
+                            </div>
+                        </div>
+                        <div class="o_wl_card">
+                            <h4>Background</h4>
+                            <div class="o_wl_card_sub">Used by the home dashboard, the Enterprise home screen and the login page.</div>
+                            <div class="o_wl_choice_grid mb-3">
+                                <t t-foreach="this.homeStyles" t-as="style" t-key="style.id">
+                                    <div class="o_wl_choice" t-att-class="{'active': this.state.values.home_style === style.id}"
+                                         t-att-data-style="style.id" t-on-click="() => this.set('home_style', style.id)">
+                                        <div t-attf-class="o_wl_choice_swatch o_wl_home_{{style.id}}"/>
+                                        <div class="small fw-semibold" t-out="style.label"/>
+                                    </div>
+                                </t>
+                            </div>
+                            <div class="o_wl_image_picker" t-if="this.state.values.home_style === 'image'">
+                                <div class="o_wl_image_preview o_wl_wide">
+                                    <img t-if="this.imageUrl('home_background')" t-att-src="this.imageUrl('home_background')" alt="Background"/>
+                                    <span t-else="" class="text-muted small">No picture yet</span>
+                                </div>
+                                <div class="d-flex flex-column gap-1">
+                                    <button class="btn btn-sm btn-secondary" t-on-click="() => this.pickImage('home_background')"><span class="wl-icon wl-icon-upload me-1"/>Upload a picture</button>
+                                    <button t-if="this.imageUrl('home_background')" class="btn btn-sm btn-link text-danger" t-on-click="() => this.removeImage('home_background')">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+
+                    <t t-if="this.state.section === 'apps'">
+                        <div class="o_wl_card">
+                            <h4>Choose the applications</h4>
+                            <div class="o_wl_card_sub">Each application has its own small module: enable only the ones you use. Enabling one never installs the application itself.</div>
+                            <div t-if="!this.state.companions.length" class="text-muted">No companion module found on this server.</div>
+                            <t t-foreach="this.state.companions" t-as="companion" t-key="companion.module">
+                                <div class="o_wl_companion" t-att-data-module="companion.module">
+                                    <div class="o_wl_companion_icon"><span class="wl-icon wl-icon-puzzle"/></div>
+                                    <div class="me-auto">
+                                        <div class="fw-semibold" t-out="companion.label"/>
+                                        <div class="small text-muted">
+                                            <t t-if="companion.installed">Enabled</t>
+                                            <t t-elif="companion.target_installed">Application installed, standard look</t>
+                                            <t t-else="">Application not installed: nothing to do</t>
+                                        </div>
+                                    </div>
+                                    <button t-if="companion.installed" class="btn btn-sm btn-outline-secondary"
+                                            t-att-disabled="this.state.busyModule"
+                                            t-on-click="() => this.uninstallCompanion(companion)">Disable</button>
+                                    <button t-elif="companion.target_installed" class="btn btn-sm btn-primary"
+                                            t-att-disabled="this.state.busyModule"
+                                            t-on-click="() => this.installCompanion(companion)">
+                                        <t t-if="this.state.busyModule === companion.module">Installing…</t>
+                                        <t t-else="">Enable</t>
+                                    </button>
+                                    <span t-else="" class="badge text-bg-200">Not needed</span>
+                                </div>
+                            </t>
+                        </div>
+                    </t>
+                </div>
+
+                <!-- live preview -->
+                <aside class="o_wl_preview">
+                    <div class="o_wl_preview_block">
+                        <div class="o_wl_preview_title">Browser tab</div>
+                        <div class="o_wl_mock_tab"><img t-att-src="this.iconPreview" alt=""/><span t-out="this.brandName"/></div>
+                    </div>
+                    <div class="o_wl_preview_block">
+                        <div class="o_wl_preview_title">Login page</div>
+                        <div class="o_wl_mock_login">
+                            <div class="o_wl_mock_login_card">
+                                <img t-att-src="this.logoPreview" alt=""/>
+                                <div class="o_wl_mock_input"/><div class="o_wl_mock_input"/>
+                                <div class="o_wl_mock_button"/>
+                                <div class="o_wl_mock_powered">
+                                    <t t-if="!this.state.values.hide_db_manager_link">Manage Databases · </t>
+                                    <t t-out="this.poweredByText() || '—'"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="o_wl_preview_block">
+                        <div class="o_wl_preview_title">Home screen</div>
+                        <div class="o_wl_mock_home" t-att-class="this.homeClass">
+                            <img t-if="this.previewLogoVisible" class="o_wl_mock_home_logo" t-att-src="this.logoPreview" alt=""
+                                 t-att-style="this.previewLogoStyle"/>
+                            <div class="o_wl_mock_home_apps"><div/><div/><div/><div/><div/><div/><div/><div/><div/><div/><div/><div/></div>
+                        </div>
+                    </div>
+                    <div class="o_wl_preview_block">
+                        <div class="o_wl_preview_title">E-mail footer</div>
+                        <div class="o_wl_mock_mail">
+                            <div>Hello, your quotation is ready…</div>
+                            <div class="o_wl_mock_mail_footer">
+                                <t t-if="!this.state.values.debrand_emails">Powered by Odoo</t>
+                                <t t-elif="this.state.values.powered_by === 'brand'" t-out="this.poweredByText()"/>
+                                <t t-else="">(no Odoo footer)</t>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="o_wl_preview_block">
+                        <div class="o_wl_preview_title">Discuss</div>
+                        <div class="o_wl_mock_chat">
+                            <img t-if="this.botAvatar" t-att-src="this.botAvatar" alt=""/>
+                            <div t-else="" class="o_wl_mock_avatar" t-out="this.botName.slice(0, 1)"/>
+                            <div>
+                                <div class="fw-semibold small" t-out="this.botName"/>
+                                <div class="o_wl_mock_bubble">Hello! I am here to help you get started.</div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </t>
+</templates>

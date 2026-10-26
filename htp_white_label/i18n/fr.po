@@ -1,0 +1,1253 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0+e-20260927\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-26 10:50+0000\n"
+"PO-Revision-Date: 2026-10-26 10:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: htp_white_label
+#: model:ir.module.module,description:base.module_htp_white_label
+msgid ""
+"\n"
+"White Label\n"
+"===========\n"
+"Make your Odoo look like your company, from one dashboard with a live preview.\n"
+"Nothing changes when the module is installed: choose your settings, then switch on “Apply my branding”.\n"
+"\n"
+"* browser tab title and favicon, installed-app (PWA) name and icons\n"
+"* “Powered by” footers (login, portal, website, surveys, e-mails): hidden or “Powered by <your brand>”\n"
+"* your brand name in the interface texts (messages, error dialogs, settings, help texts)\n"
+"* a simpler user menu (documentation, odoo.com account, your own help link)\n"
+"* a tidy Apps menu in Community: only the apps you can install\n"
+"* the assistant (OdooBot) with the name and picture of your choice\n"
+"* a home dashboard in your colors: your applications on your background, with your logo\n"
+"* your logo on the home screen, at the position and size you choose\n"
+"* optional companion modules for the Website, the Point of Sale, the customer portal, Live Chat\n"
+"  and the Enterprise home screen: enable only the applications you use.\n"
+msgstr ""
+"\n"
+"White Label\n"
+"===========\n"
+"Donnez à votre Odoo l'image de votre entreprise, depuis un seul tableau de bord avec aperçu en direct.\n"
+"Rien ne change à l'installation du module : choisissez vos réglages, puis activez « Appliquer mon image de marque ».\n"
+"\n"
+"* titre et icône de l'onglet du navigateur, nom et icônes de l'application installée (PWA)\n"
+"* mentions « Powered by » (connexion, portail, site web, sondages, e-mails) : masquées ou « Powered by <votre marque> »\n"
+"* le nom de votre marque dans les textes de l'interface (messages, fenêtres d'erreur, paramètres, aides)\n"
+"* un menu utilisateur plus simple (documentation, compte odoo.com, votre propre lien d'aide)\n"
+"* un menu Applications épuré en Community : seulement les applications que vous pouvez installer\n"
+"* l'assistant (OdooBot) avec le nom et l'image de votre choix\n"
+"* un écran d'accueil à vos couleurs : vos applications sur votre fond, avec votre logo\n"
+"* votre logo sur l'écran d'accueil, à la position et à la taille de votre choix\n"
+"* modules complémentaires facultatifs pour le site web, le point de vente, le portail client, le chat en direct\n"
+"  et l'écran d'accueil Enterprise : n'activez que les applications que vous utilisez.\n"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "#2c3e50"
+msgstr "#2c3e50"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "(no Odoo footer)"
+msgstr "(aucune mention Odoo)"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid ""
+"A grid of your applications with a search bar. A new button in the top bar "
+"brings you back to it."
+msgstr ""
+"Une grille de vos applications avec une barre de recherche. Un nouveau "
+"bouton de la barre du haut permet d'y revenir."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid ""
+"Above the applications. It uses your logo (Identity tab) or the company "
+"logo."
+msgstr ""
+"Au-dessus des applications. Il utilise votre logo (onglet Identité) ou le "
+"logo de la société."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid ""
+"Also set list_db = False in the server configuration to close the database "
+"manager."
+msgstr ""
+"Mettez aussi list_db = False dans la configuration du serveur pour fermer le"
+" gestionnaire de bases."
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__app_icon
+msgid "App icon"
+msgstr "Icône de l'application"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "App icon (square)"
+msgstr "Icône de l'application (carrée)"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Application installed, standard look"
+msgstr "Application installée, apparence standard"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Application not installed: nothing to do"
+msgstr "Application non installée : rien à faire"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "Applications"
+msgstr "Applications"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Apply it to the top bar and the main buttons"
+msgstr "L'appliquer à la barre du haut et aux boutons principaux"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__enabled
+msgid "Apply my branding"
+msgstr "Appliquer mon image de marque"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__color_navbar
+msgid "Apply the color to the interface"
+msgstr "Appliquer la couleur à l'interface"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Assistant"
+msgstr "Assistant"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__bot_avatar
+msgid "Assistant avatar"
+msgstr "Avatar de l'assistant"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__bot_name
+msgid "Assistant name"
+msgstr "Nom de l'assistant"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Avatar"
+msgstr "Avatar"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Background"
+msgstr "Fond"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__home_background
+msgid "Background image"
+msgstr "Image de fond"
+
+#. module: htp_white_label
+#: model:ir.model,name:htp_white_label.model_base
+msgid "Base"
+msgstr "Base"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__color
+#: model:ir.model.fields.selection,name:htp_white_label.selection__white_label_config__home_style__color
+msgid "Brand color"
+msgstr "Couleur de la marque"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__brand_name
+msgid "Brand name"
+msgstr "Nom de la marque"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "Brand the “About” block of the settings"
+msgstr "Personnaliser le bloc « À propos » des paramètres"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__replace_about
+msgid "Brand the “About” section of the settings"
+msgstr "Personnaliser la section « À propos » des paramètres"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__brand_website
+msgid "Brand website"
+msgstr "Site web de la marque"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__home_dashboard
+msgid "Branded home dashboard"
+msgstr "Écran d'accueil à vos couleurs"
+
+#. module: htp_white_label
+#: model_terms:ir.ui.view,arch_db:htp_white_label.res_config_settings_view_form
+msgid "Branding"
+msgstr "Marque"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "Branding saved. Reload the page to see it everywhere."
+msgstr "Marque enregistrée. Rechargez la page pour la voir partout."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Browser tab"
+msgstr "Onglet du navigateur"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid ""
+"Browser tab, messages, error dialogs, settings, help texts and placeholders "
+"show your brand."
+msgstr ""
+"L'onglet du navigateur, les messages, les fenêtres d'erreur, les paramètres,"
+" les aides et les exemples de saisie affichent votre marque."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+#: model:ir.model.fields.selection,name:htp_white_label.selection__white_label_config__home_logo_position__center
+msgid "Center"
+msgstr "Centre"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Choose the applications"
+msgstr "Choisir les applications"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__debrand_emails
+msgid "Clean outgoing e-mails"
+msgstr "Nettoyer les e-mails envoyés"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "Clean the e-mails"
+msgstr "Nettoyer les e-mails"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__cleanup_user_menu
+msgid "Clean the user menu"
+msgstr "Épurer le menu utilisateur"
+
+#. module: htp_white_label
+#: model:ir.model.fields,help:htp_white_label.field_white_label_config__hide_enterprise_upsell
+msgid ""
+"Community: hides the paid apps of the Apps menu and the settings marked "
+"“Enterprise”. No effect on an Enterprise database."
+msgstr ""
+"Community : masque les applications payantes du menu Applications et les "
+"paramètres marqués « Enterprise ». Sans effet sur une base Enterprise."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid ""
+"Community: the Apps menu no longer lists the paid apps and the settings "
+"marked “Enterprise” disappear."
+msgstr ""
+"Community : le menu Applications ne liste plus les applications payantes et "
+"les paramètres marqués « Enterprise » disparaissent."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Copyright © 2004 Odoo S.A. · GNU LGPL Licensed"
+msgstr "Copyright © 2004 Odoo S.A. · sous licence GNU LGPL"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Disable"
+msgstr "Désactiver"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Discard"
+msgstr "Annuler"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Discuss"
+msgstr "Discussion"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_ir_http__display_name
+#: model:ir.model.fields,field_description:htp_white_label.field_ir_ui_view__display_name
+#: model:ir.model.fields,field_description:htp_white_label.field_mail_mail__display_name
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Draw it from my initial"
+msgstr "La dessiner avec mon initiale"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "E-mail footer"
+msgstr "Pied des e-mails"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid ""
+"Each application has its own small module: enable only the ones you use. "
+"Enabling one never installs the application itself."
+msgstr ""
+"Chaque application a son petit module : n'activez que ceux dont vous avez "
+"besoin. En activer un n'installe jamais l'application elle-même."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Each option can be switched off on its own."
+msgstr "Chaque option peut être désactivée séparément."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Enable"
+msgstr "Activer"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Enabled"
+msgstr "Activé"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid ""
+"Enterprise already has a home screen: its background follows the choice "
+"below once the “Enterprise home screen” module is enabled (Applications "
+"tab)."
+msgstr ""
+"Enterprise a déjà un écran d'accueil : son fond suit le choix ci-dessous dès"
+" que le module « Écran d'accueil Enterprise » est activé (onglet "
+"Applications)."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "Every e-mail sent loses “Powered by Odoo” and its links to odoo.com."
+msgstr ""
+"Chaque e-mail envoyé perd « Powered by Odoo » et ses liens vers odoo.com."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Everything else"
+msgstr "Tout le reste"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid ""
+"Footer of the login page, the customer portal, the website, the surveys and "
+"the e-mails."
+msgstr ""
+"Pied de page de la connexion, du portail client, du site web, des sondages "
+"et des e-mails."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/home_dashboard.js:0
+msgid "Good afternoon"
+msgstr "Bon après-midi"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/home_dashboard.js:0
+msgid "Good evening"
+msgstr "Bonsoir"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/home_dashboard.js:0
+msgid "Good morning"
+msgstr "Bonjour"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+#: model:ir.model.fields.selection,name:htp_white_label.selection__white_label_config__home_style__gradient
+msgid "Gradient"
+msgstr "Dégradé"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Greet the user"
+msgstr "Saluer l'utilisateur"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__home_greeting
+msgid "Greet the user on the home dashboard"
+msgstr "Saluer l'utilisateur sur l'écran d'accueil"
+
+#. module: htp_white_label
+#: model:ir.model,name:htp_white_label.model_ir_http
+msgid "HTTP Routing"
+msgstr "Routage HTTP"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Height:"
+msgstr "Hauteur :"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Hello! I am here to help you get started."
+msgstr "Bonjour ! Je suis là pour vous aider à démarrer."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Hello, your quotation is ready…"
+msgstr "Bonjour, votre devis est prêt…"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__support_url
+msgid "Help / support link"
+msgstr "Lien d'aide / support"
+
+#. module: htp_white_label
+#: model:ir.model.fields,help:htp_white_label.field_white_label_config__color
+msgid "Hexadecimal color, e.g. #2c3e50"
+msgstr "Couleur hexadécimale, ex. #2c3e50"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+#: model:ir.model.fields.selection,name:htp_white_label.selection__white_label_config__home_logo_position__none
+msgid "Hidden"
+msgstr "Masqué"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__hide_enterprise_upsell
+msgid "Hide Enterprise advertising"
+msgstr "Masquer la publicité Enterprise"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+#: model:ir.model.fields.selection,name:htp_white_label.selection__white_label_config__powered_by__hide
+msgid "Hide it"
+msgstr "La masquer"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__hide_documentation
+msgid "Hide links to the Odoo documentation"
+msgstr "Masquer les liens vers la documentation Odoo"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "Hide the links to the Odoo documentation"
+msgstr "Masquer les liens vers la documentation Odoo"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__hide_db_manager_link
+msgid "Hide “Manage Databases”"
+msgstr "Masquer « Gérer les bases de données »"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "Hide “Manage Databases” on the login page"
+msgstr "Masquer « Gérer les bases de données » sur la page de connexion"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+#: model:ir.actions.client,name:htp_white_label.action_home_dashboard
+msgid "Home"
+msgstr "Accueil"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+#: model_terms:ir.ui.view,arch_db:htp_white_label.htp_white_label_config_view_form
+msgid "Home screen"
+msgstr "Écran d'accueil"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__home_style
+msgid "Home screen background"
+msgstr "Fond de l'écran d'accueil"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_ir_http__id
+#: model:ir.model.fields,field_description:htp_white_label.field_ir_ui_view__id
+#: model:ir.model.fields,field_description:htp_white_label.field_mail_mail__id
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__id
+msgid "ID"
+msgstr "ID"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Icon"
+msgstr "Icône"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+#: model_terms:ir.ui.view,arch_db:htp_white_label.htp_white_label_config_view_form
+msgid "Identity"
+msgstr "Identité"
+
+#. module: htp_white_label
+#: model:ir.model.fields.selection,name:htp_white_label.selection__white_label_config__home_style__image
+msgid "Image"
+msgstr "Image"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Installing…"
+msgstr "Installation…"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Large"
+msgstr "Grand"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+#: model:ir.model.fields.selection,name:htp_white_label.selection__white_label_config__home_logo_position__left
+msgid "Left"
+msgstr "Gauche"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Loading…"
+msgstr "Chargement…"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Login page"
+msgstr "Page de connexion"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__logo
+msgid "Logo"
+msgstr "Logo"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Logo and icon"
+msgstr "Logo et icône"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__home_logo_size
+msgid "Logo height (pixels)"
+msgstr "Hauteur du logo (pixels)"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__home_logo_position
+msgid "Logo on the home screen"
+msgstr "Logo sur l'écran d'accueil"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Make your Odoo look like your company."
+msgstr "Donnez à votre Odoo l'image de votre entreprise."
+
+#. module: htp_white_label
+#: model_terms:ir.ui.view,arch_db:htp_white_label.res_config_settings_view_form
+msgid ""
+"Make your Odoo look like your company: name, logo, icon and colors. Off "
+"until you switch it on."
+msgstr ""
+"Donnez à votre Odoo l'image de votre entreprise : nom, logo, icône et "
+"couleurs. Inactif tant que vous ne l'activez pas."
+
+#. module: htp_white_label
+#: model:ir.module.module,summary:base.module_htp_white_label
+msgid ""
+"Make your Odoo look like your company: name, logo, icon, colors, home "
+"screen, e-mails"
+msgstr ""
+"Donnez à votre Odoo l'image de votre entreprise : nom, logo, icône, "
+"couleurs, écran d'accueil, e-mails"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Manage Databases ·"
+msgstr "Gérer les bases de données ·"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "My Company"
+msgstr "Ma société"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "No application matches your search."
+msgstr "Aucune application ne correspond à votre recherche."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "No companion module found on this server."
+msgstr "Aucun module complémentaire trouvé sur ce serveur."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid ""
+"No logo yet: upload one in the Identity tab (or set the company logo) to "
+"show it here."
+msgstr ""
+"Pas encore de logo : ajoutez-en un dans l'onglet Identité (ou renseignez le "
+"logo de la société) pour l'afficher ici."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "No picture yet"
+msgstr "Pas encore d'image"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Not needed"
+msgstr "Inutile"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "OdooBot takes the assistant name and avatar of the Identity tab."
+msgstr "OdooBot prend le nom et l'avatar d'assistant de l'onglet Identité."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid ""
+"OdooBot welcomes the users in Discuss: give it a name and a face that suit "
+"your company."
+msgstr ""
+"OdooBot accueille les utilisateurs dans Discussion : donnez-lui un nom et un"
+" visage à l'image de votre entreprise."
+
+#. module: htp_white_label
+#: model:ir.model.fields,help:htp_white_label.field_white_label_config__enabled
+msgid ""
+"Off: Odoo keeps its standard look. Installing the module changes nothing "
+"until this is switched on."
+msgstr ""
+"Désactivé : Odoo garde son apparence standard. L'installation du module ne "
+"change rien tant que ce n'est pas activé."
+
+#. module: htp_white_label
+#. odoo-python
+#: code:addons/htp_white_label/models/htp_white_label_config.py:0
+msgid "Only administrators can change the branding."
+msgstr "Seuls les administrateurs peuvent modifier la marque."
+
+#. module: htp_white_label
+#. odoo-python
+#: code:addons/htp_white_label/models/htp_white_label_config.py:0
+msgid "Only administrators can install modules."
+msgstr "Seuls les administrateurs peuvent installer des modules."
+
+#. module: htp_white_label
+#. odoo-python
+#: code:addons/htp_white_label/models/htp_white_label_config.py:0
+msgid "Only administrators can uninstall modules."
+msgstr "Seuls les administrateurs peuvent désinstaller des modules."
+
+#. module: htp_white_label
+#: model_terms:ir.ui.view,arch_db:htp_white_label.res_config_settings_view_form
+msgid "Open the White Label dashboard"
+msgstr "Ouvrir le tableau de bord White Label"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Open the branded home dashboard after login"
+msgstr "Ouvrir l'écran d'accueil à vos couleurs après la connexion"
+
+#. module: htp_white_label
+#: model:ir.model.fields,help:htp_white_label.field_white_label_config__home_dashboard
+msgid ""
+"Opens a full-screen grid of your applications, with your logo and "
+"background, when you log in."
+msgstr ""
+"Ouvre une grille plein écran de vos applications, avec votre logo et votre "
+"fond, à la connexion."
+
+#. module: htp_white_label
+#: model_terms:ir.ui.view,arch_db:htp_white_label.htp_white_label_config_view_form
+msgid "Options"
+msgstr "Options"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__original_apps_domain
+msgid "Original Apps Domain"
+msgstr "Filtre d'origine du menu Applications"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__original_bot_image
+msgid "Original Bot Image"
+msgstr "Image d'origine du robot"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__original_bot_name
+msgid "Original Bot Name"
+msgstr "Nom d'origine du robot"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__original_web_app_name
+msgid "Original Web App Name"
+msgstr "Nom d'origine de l'application web"
+
+#. module: htp_white_label
+#: model:ir.model,name:htp_white_label.model_mail_mail
+msgid "Outgoing Mail"
+msgstr "E-mail sortant"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "Picture"
+msgstr "Image"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "Plain color"
+msgstr "Couleur unie"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "Please enter your brand name."
+msgstr "Veuillez saisir le nom de votre marque."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+#: model_terms:ir.ui.view,arch_db:htp_white_label.brand_promotion_message
+#: model_terms:ir.ui.view,arch_db:htp_white_label.login_layout
+msgid "Powered by"
+msgstr "Propulsé par"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Powered by Odoo"
+msgstr "Propulsé par Odoo"
+
+#. module: htp_white_label
+#: model:ir.model.fields.selection,name:htp_white_label.selection__white_label_config__powered_by__brand
+msgid "Powered by my brand"
+msgstr "Propulsé par ma marque"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "Reload now"
+msgstr "Recharger maintenant"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Remove"
+msgstr "Retirer"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid ""
+"Removes Documentation and the odoo.com account; “Help” opens your support "
+"link (or disappears)."
+msgstr ""
+"Retire Documentation et le compte odoo.com ; « Aide » ouvre votre lien de "
+"support (ou disparaît)."
+
+#. module: htp_white_label
+#: model:ir.model.fields,help:htp_white_label.field_white_label_config__cleanup_user_menu
+msgid ""
+"Removes Documentation, the odoo.com account and points Help to your support "
+"link."
+msgstr ""
+"Retire Documentation et le compte odoo.com, et dirige Aide vers votre lien "
+"de support."
+
+#. module: htp_white_label
+#: model:ir.model.fields,help:htp_white_label.field_white_label_config__debrand_emails
+msgid ""
+"Removes “Powered by Odoo” and the links to odoo.com from every e-mail sent."
+msgstr ""
+"Retire « Powered by Odoo » et les liens vers odoo.com de chaque e-mail "
+"envoyé."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__debrand_bot
+msgid "Rename OdooBot"
+msgstr "Renommer OdooBot"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "Replace “Odoo” everywhere in the interface"
+msgstr "Remplacer « Odoo » partout dans l'interface"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__replace_texts
+msgid "Replace “Odoo” in the interface"
+msgstr "Remplacer « Odoo » dans l'interface"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Replaces the links to odoo.com."
+msgstr "Remplace les liens vers odoo.com."
+
+#. module: htp_white_label
+#: model:ir.model.fields,help:htp_white_label.field_white_label_config__bot_name
+msgid "Replaces “OdooBot” in Discuss."
+msgstr "Remplace « OdooBot » dans Discussion."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+#: model:ir.model.fields.selection,name:htp_white_label.selection__white_label_config__home_logo_position__right
+msgid "Right"
+msgstr "Droite"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Save"
+msgstr "Enregistrer"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "Saved. Your branding is off: Odoo keeps its standard look."
+msgstr ""
+"Enregistré. Votre image de marque est désactivée : Odoo garde son apparence "
+"standard."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Search an application…"
+msgstr "Rechercher une application…"
+
+#. module: htp_white_label
+#: model:ir.model,website_form_label:htp_white_label.model_mail_mail
+msgid "Send an E-mail"
+msgstr "Envoyer un e-mail"
+
+#. module: htp_white_label
+#: model:ir.model.fields,help:htp_white_label.field_white_label_config__home_logo_position
+msgid ""
+"Shown above the applications when you have a logo (yours or the company "
+"logo)."
+msgstr ""
+"Affiché au-dessus des applications si vous avez un logo (le vôtre ou celui "
+"de la société)."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid ""
+"Shown instead of “Odoo” in the browser tab, the interface and the e-mails."
+msgstr ""
+"Affiché à la place d'« Odoo » dans l'onglet du navigateur, l'interface et "
+"les e-mails."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "Shows your brand and the version instead of the Odoo copyright."
+msgstr "Affiche votre marque et la version à la place du copyright Odoo."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Small"
+msgstr "Petit"
+
+#. module: htp_white_label
+#: model:ir.model.fields,help:htp_white_label.field_white_label_config__app_icon
+msgid ""
+"Square icon: browser tab (favicon), installed app, phone home screen. When "
+"empty, an icon is drawn with the initial of the brand."
+msgstr ""
+"Icône carrée : onglet du navigateur (favicon), application installée, écran "
+"d'accueil du téléphone. Vide : une icône est dessinée avec l'initiale de la "
+"marque."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+#: model:ir.model.fields.selection,name:htp_white_label.selection__white_label_config__home_style__default
+msgid "Standard"
+msgstr "Standard"
+
+#. module: htp_white_label
+#: model:ir.model.fields,help:htp_white_label.field_white_label_config__support_url
+msgid ""
+"Target of the “Help” entry of the user menu. Leave empty to remove the "
+"entry."
+msgstr ""
+"Cible de l'entrée « Aide » du menu utilisateur. Laissez vide pour retirer "
+"l'entrée."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "Texts and footers"
+msgstr "Textes et pieds de page"
+
+#. module: htp_white_label
+#. odoo-python
+#: code:addons/htp_white_label/models/htp_white_label_config.py:0
+msgid "The White Label settings already exist."
+msgstr "Les paramètres White Label existent déjà."
+
+#. module: htp_white_label
+#. odoo-python
+#: code:addons/htp_white_label/models/htp_white_label_config.py:0
+msgid "The brand color must look like #2c3e50."
+msgstr "La couleur de la marque doit ressembler à #2c3e50."
+
+#. module: htp_white_label
+#. odoo-python
+#: code:addons/htp_white_label/models/htp_white_label_config.py:0
+msgid "The brand name cannot be empty."
+msgstr "Le nom de la marque ne peut pas être vide."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid ""
+"The first screen after login: all the applications on your background, with "
+"your logo."
+msgstr ""
+"Le premier écran après la connexion : toutes les applications sur votre "
+"fond, avec votre logo."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid ""
+"The logo appears on the login page, the home screen and the e-mails. The "
+"icon is used in the browser tab and when Odoo is installed on a phone or a "
+"computer."
+msgstr ""
+"Le logo apparaît sur la page de connexion, l'écran d'accueil et les e-mails."
+" L'icône sert dans l'onglet du navigateur et quand Odoo est installé sur un "
+"téléphone ou un ordinateur."
+
+#. module: htp_white_label
+#. odoo-python
+#: code:addons/htp_white_label/models/htp_white_label_config.py:0
+msgid "The logo height must be between 24 and 200 pixels."
+msgstr "La hauteur du logo doit être comprise entre 24 et 200 pixels."
+
+#. module: htp_white_label
+#. odoo-python
+#: code:addons/htp_white_label/models/htp_white_label_config.py:0
+msgid "The module %s is not available on this server."
+msgstr "Le module %s n'est pas disponible sur ce serveur."
+
+#. module: htp_white_label
+#: model:ir.model.fields,help:htp_white_label.field_white_label_config__color_navbar
+msgid "The top bar, the main buttons and the switches take the brand color."
+msgstr ""
+"La barre du haut, les boutons principaux et les interrupteurs prennent la "
+"couleur de la marque."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid ""
+"The “?” and “Documentation” links of the settings and forms are hidden."
+msgstr ""
+"Les liens « ? » et « Documentation » des paramètres et des formulaires sont "
+"masqués."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/js/dashboard.js:0
+msgid "This picture is too large (8 MB maximum)."
+msgstr "Cette image est trop lourde (8 Mo maximum)."
+
+#. module: htp_white_label
+#: model:ir.model.fields,help:htp_white_label.field_white_label_config__replace_texts
+msgid "Titles, messages, error dialogs, settings, browser tab…"
+msgstr ""
+"Titres, messages, fenêtres d'erreur, paramètres, onglet du navigateur…"
+
+#. module: htp_white_label
+#. odoo-python
+#: code:addons/htp_white_label/models/htp_white_label_config.py:0
+msgid "Uninstall the White Label module to restore the Odoo branding."
+msgstr "Désinstallez le module White Label pour rétablir la marque Odoo."
+
+#. module: htp_white_label
+#. odoo-python
+#: code:addons/htp_white_label/models/htp_white_label_config.py:0
+msgid "Unknown module."
+msgstr "Module inconnu."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Unsaved changes"
+msgstr "Modifications non enregistrées"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Upload"
+msgstr "Envoyer"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Upload a picture"
+msgstr "Envoyer une image"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Use the company logo"
+msgstr "Utiliser le logo de la société"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid ""
+"Used by the home dashboard, the Enterprise home screen and the login page."
+msgstr ""
+"Utilisé par l'écran d'accueil, l'écran d'accueil Enterprise et la page de "
+"connexion."
+
+#. module: htp_white_label
+#: model:ir.model.fields,help:htp_white_label.field_white_label_config__brand_website
+msgid "Used instead of odoo.com in footers and e-mails."
+msgstr "Utilisé à la place d'odoo.com dans les pieds de page et les e-mails."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Version"
+msgstr "Version"
+
+#. module: htp_white_label
+#: model:ir.model,name:htp_white_label.model_ir_ui_view
+msgid "View"
+msgstr "Vue"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Website"
+msgstr "Site web"
+
+#. module: htp_white_label
+#. odoo-javascript
+#. odoo-python
+#: code:addons/htp_white_label/models/htp_white_label_config.py:0
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+#: model:ir.actions.client,name:htp_white_label.action_white_label_dashboard
+#: model:ir.ui.menu,name:htp_white_label.menu_white_label
+#: model_terms:ir.ui.view,arch_db:htp_white_label.htp_white_label_config_view_form
+#: model_terms:ir.ui.view,arch_db:htp_white_label.res_config_settings_view_form
+msgid "White Label"
+msgstr "White Label"
+
+#. module: htp_white_label
+#: model:ir.module.module,shortdesc:base.module_htp_white_label
+msgid "White Label Branding"
+msgstr "White Label Branding"
+
+#. module: htp_white_label
+#: model:ir.model,name:htp_white_label.model_white_label_config
+msgid "White Label settings"
+msgstr "Paramètres White Label"
+
+#. module: htp_white_label
+#: model:ir.model.fields,help:htp_white_label.field_white_label_config__logo
+msgid ""
+"Wide logo: login page, home screen and e-mails. Defaults to the company "
+"logo."
+msgstr ""
+"Logo large : page de connexion, écran d'accueil et e-mails. Par défaut, le "
+"logo de la société."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid ""
+"Without a picture, the icon shows the initial of your brand on your color."
+msgstr ""
+"Sans image, l'icône montre l'initiale de votre marque sur votre couleur."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "Your brand"
+msgstr "Votre marque"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid ""
+"Your branding is off: Odoo keeps its standard look. Choose your settings, "
+"switch on “Apply my branding”, then save."
+msgstr ""
+"Votre image de marque est désactivée : Odoo garde son apparence standard. "
+"Choisissez vos réglages, activez « Appliquer mon image de marque », puis "
+"enregistrez."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "https://help.example.com"
+msgstr "https://aide.exemple.fr"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "https://www.example.com"
+msgstr "https://www.exemple.fr"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "px"
+msgstr "px"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "“Good morning, Marie” and today's date above the applications."
+msgstr "« Bonjour, Marie » et la date du jour au-dessus des applications."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "“Help” entry of the user menu. Empty: the entry is removed."
+msgstr "Entrée « Aide » du menu utilisateur. Vide : l'entrée est retirée."
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "“Powered by"
+msgstr "« Propulsé par"
+
+#. module: htp_white_label
+#: model:ir.model.fields,field_description:htp_white_label.field_white_label_config__powered_by
+msgid "“Powered by Odoo”"
+msgstr "« Propulsé par Odoo »"
+
+#. module: htp_white_label
+#. odoo-javascript
+#: code:addons/htp_white_label/static/src/xml/htp_white_label.xml:0
+msgid "“Powered by Odoo” footer"
+msgstr "Mention « Powered by Odoo »"
