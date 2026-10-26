@@ -23,5 +23,6 @@
             'white_label_kit_pos/static/src/js/*.js',
         ],
     },
+    'images': ['static/description/banner.png'],
     'installable': True,
 }
