@@ -1,7 +1,7 @@
 {
     'name': 'White Label POS',
     'summary': 'Your company look in the Point of Sale: logo, receipts, customer display',
-    'version': '20.0.1.0.2',
+    'version': '20.0.1.0.3',
     'category': 'Productivity',
     'author': 'HIGHTECH PRO',
     'website': 'https://htp.solutions',

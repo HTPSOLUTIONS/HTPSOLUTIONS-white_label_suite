@@ -18,7 +18,7 @@ Nothing changes when the module is installed: choose your settings, then switch 
 * optional companion modules for the Website, the Point of Sale, the customer portal, Live Chat
   and the Enterprise home screen: enable only the applications you use.
 """,
-    'version': '20.0.1.0.2',
+    'version': '20.0.1.0.3',
     'category': 'Productivity',
     'author': 'HIGHTECH PRO',
     'website': 'https://htp.solutions',
@@ -33,6 +33,7 @@ Nothing changes when the module is installed: choose your settings, then switch 
     'assets': {
         'web.assets_backend': [
             'white_label_kit/static/src/scss/white_label_kit.scss',
+            'white_label_kit/static/src/scss/white_label_kit_dashboard.scss',
             'white_label_kit/static/src/xml/white_label_kit.xml',
             'white_label_kit/static/src/js/*.js',
             'white_label_kit/static/src/v20/*',
