@@ -9,5 +9,6 @@
     'license': 'OPL-1',
     'depends': ['white_label_kit', 'im_livechat'],
     'data': ['views/livechat_templates.xml'],
+    'images': ['static/description/banner.png'],
     'installable': True,
 }

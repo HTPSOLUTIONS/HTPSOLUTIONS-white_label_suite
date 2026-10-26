@@ -9,5 +9,6 @@
     'license': 'OPL-1',
     'depends': ['white_label_kit', 'portal'],
     'data': ['views/portal_templates.xml'],
+    'images': ['static/description/banner.png'],
     'installable': True,
 }
