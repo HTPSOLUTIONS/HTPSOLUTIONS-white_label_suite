@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- Odoo 17 - 19: “Powered by Odoo” at the bottom of the receipt.
+         The line is hidden, not removed, so other modules that change it keep working. If another module already
+         removed it, the anchor added at the end of the receipt is used instead: a missing target would break the receipt (the whole
+         POS on Odoo 17, where the server applies these changes). -->
+    <t t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('pos-receipt')]" position="inside">
+            <span t-if="false" class="o_wl_receipt_anchor"/>
+        </xpath>
+        <xpath expr="(//*[starts-with(normalize-space(text()), 'Powered by')] | //span[hasclass('o_wl_receipt_anchor')])" position="attributes">
+            <attribute name="t-if">false</attribute>
+        </xpath>
+        <xpath expr="(//*[starts-with(normalize-space(text()), 'Powered by')] | //span[hasclass('o_wl_receipt_anchor')])" position="after">
+            <p t-if="this.wlPoweredBy" class="text-center" t-out="this.wlPoweredBy"/>
+        </xpath>
+    </t>
+</templates>

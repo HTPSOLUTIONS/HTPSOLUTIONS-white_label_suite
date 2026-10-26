@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- “Website Live Chat Powered by Odoo” of the support page: hidden (not removed) when the branding is on -->
+    <template id="support_page" inherit_id="im_livechat.support_page" name="White Label: live chat page">
+        <xpath expr="//div[hasclass('main')]/div[strong]" position="attributes">
+            <attribute name="t-if">not env['white.label.config'].sudo()._brand_data().get('active')</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('main')]/div[strong]" position="after">
+            <t t-set="wl_brand" t-value="env['white.label.config'].sudo()._brand_data()"/>
+            <div t-if="wl_brand.get('active') and wl_brand.get('powered_by') == 'brand'">Live Chat by <strong t-out="wl_brand['name']"/>.</div>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- sidebar of the portal documents (quotation, invoice, task…): “Powered by [Odoo logo]”
+         hidden, not removed: other modules that change it keep working -->
+    <template id="portal_record_sidebar" inherit_id="portal.portal_record_sidebar" name="White Label: portal sidebar">
+        <xpath expr="//a[contains(@href, 'utm_medium=portal')]/.." position="attributes">
+            <attribute name="t-if">not env['white.label.config'].sudo()._brand_data().get('active')</attribute>
+        </xpath>
+        <xpath expr="//a[contains(@href, 'utm_medium=portal')]/.." position="after">
+            <t t-set="wl_brand" t-value="env['white.label.config'].sudo()._brand_data()"/>
+            <div t-if="wl_brand.get('active') and wl_brand.get('powered_by') == 'brand'" class="d-none d-lg-block mt-4 small text-center text-muted o_white_label_powered_by">
+                Powered by
+                <a t-if="wl_brand.get('website')" t-att-href="wl_brand['website']" target="_blank" rel="noopener"><t t-out="wl_brand['name']"/></a>
+                <t t-else="" t-out="wl_brand['name']"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>
