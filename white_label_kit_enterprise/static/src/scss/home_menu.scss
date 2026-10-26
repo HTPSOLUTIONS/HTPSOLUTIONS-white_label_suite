@@ -1,0 +1,98 @@
+// Enterprise home screen and login page: background chosen in the White Label dashboard.
+// The style class (o_wl_home_style_*) and the CSS variables are set on <body> by white_label_kit.
+@mixin wl-enterprise-background {
+    &.o_wl_home_style_color {
+        background: var(--wl-color) !important;
+    }
+    &.o_wl_home_style_gradient {
+        background:
+            radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.22), transparent 45%),
+            radial-gradient(circle at 85% 90%, rgba(0, 0, 0, 0.35), transparent 50%),
+            linear-gradient(135deg, var(--wl-color), var(--wl-color-dark)) !important;
+        background-attachment: fixed !important;
+    }
+    &.o_wl_home_style_image {
+        background: var(--wl-color-dark) var(--wl-home-bg, none) center / cover no-repeat fixed !important;
+    }
+}
+body.o_home_menu_background {
+    @include wl-enterprise-background;
+}
+.o_web_client.o_home_menu_background {
+    @include wl-enterprise-background;
+}
+// brand logo above the applications: position (left / center / right) and height chosen in the dashboard.
+// Only when the branding is on and a logo exists (o_wl_home_logo_* classes set on <body> by white_label_kit).
+body.o_wl_has_home_logo .o_home_menu::before {
+    content: "";
+    display: block;
+    flex: none;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 850px;  // width of the applications grid of the Enterprise home screen
+    height: var(--wl-home-logo-size, 64px);
+    margin: 1.5rem auto 1rem;
+    padding: 0 0.75rem;
+    align-self: center;
+    background: var(--wl-logo) center / contain no-repeat;
+    background-origin: content-box;
+}
+// Odoo 20: flex column with its own side padding. On phones Odoo opens the screen scrolled by the height of the
+// search bar (pull down to search): the search bar stays first, the logo comes right after it.
+body.o_wl_has_home_logo .o_home_menu.d-flex {
+    &::before {
+        padding: 0;
+        margin: 0.5rem auto 1.25rem;
+    }
+    > .o_home_menu_search_input {
+        order: -1;
+    }
+}
+body.o_wl_home_logo_left .o_home_menu::before {
+    background-position: left center;
+}
+body.o_wl_home_logo_right .o_home_menu::before {
+    background-position: right center;
+}
+@media (max-width: 767.98px) {
+    body.o_wl_has_home_logo .o_home_menu::before {
+        height: calc(var(--wl-home-logo-size, 64px) * 0.75);
+        margin: 1rem auto 0.75rem;
+    }
+    body.o_wl_has_home_logo .o_home_menu.d-flex::before {
+        margin: 0.25rem auto 1rem;
+    }
+}
+// menu search bar (touch screens) on a brand background: light, rounded, with a search icon.
+// Same height as Odoo's bar, so that it is still fully hidden when the screen opens (pull down to search).
+body.o_wl_home_style_color, body.o_wl_home_style_gradient, body.o_wl_home_style_image {
+    .o_home_menu .o_home_menu_search_input:not(.visually-hidden) {
+        width: 100%;
+        max-width: 560px;
+        height: 2.25rem;  // Odoo opens the screen scrolled by 46px: the bar (with its 8px top margin) must fit in it
+        padding: 0 1rem 0 2.6rem !important;
+        line-height: 2.25rem;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        border-radius: 999px !important;
+        background: rgba(255, 255, 255, 0.16) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") no-repeat 1rem center / 1.1rem !important;
+        color: #fff !important;
+        box-shadow: none;  // a shadow would show below the top bar while the bar is tucked away
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        &:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.24) !important;
+            border-color: rgba(255, 255, 255, 0.6) !important;
+        }
+    }
+}
+// readable app names on a colored background
+body.o_wl_home_style_color, body.o_wl_home_style_gradient, body.o_wl_home_style_image {
+    .o_home_menu .o_app .o_caption {
+        color: #fff;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+    }
+}
