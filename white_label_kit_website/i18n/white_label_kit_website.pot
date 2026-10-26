@@ -1,0 +1,65 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* white_label_kit_website
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0+e-20260927\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-26 11:25+0000\n"
+"PO-Revision-Date: 2026-10-26 11:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: white_label_kit_website
+#: model:ir.model.fields,field_description:white_label_kit_website.field_website__display_name
+#: model:ir.model.fields,field_description:white_label_kit_website.field_white_label_config__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: white_label_kit_website
+#: model:ir.model.fields,field_description:white_label_kit_website.field_website__white_label_kit_favicon
+msgid "Favicon set by White Label"
+msgstr ""
+
+#. module: white_label_kit_website
+#: model:ir.model.fields,field_description:white_label_kit_website.field_website__id
+#: model:ir.model.fields,field_description:white_label_kit_website.field_white_label_config__id
+msgid "ID"
+msgstr ""
+
+#. module: white_label_kit_website
+#: model_terms:ir.ui.view,arch_db:white_label_kit_website.show_website_info
+msgid "Information about this instance:"
+msgstr ""
+
+#. module: white_label_kit_website
+#: model_terms:ir.ui.view,arch_db:white_label_kit_website.show_website_info
+msgid "Version"
+msgstr ""
+
+#. module: white_label_kit_website
+#: model:ir.model,name:white_label_kit_website.model_website
+msgid "Website"
+msgstr ""
+
+#. module: white_label_kit_website
+#: model:ir.module.module,shortdesc:base.module_white_label_kit_website
+msgid "White Label Website"
+msgstr ""
+
+#. module: white_label_kit_website
+#: model:ir.model,name:white_label_kit_website.model_white_label_config
+msgid "White Label settings"
+msgstr ""
+
+#. module: white_label_kit_website
+#: model:ir.module.module,summary:base.module_white_label_kit_website
+msgid ""
+"Your company look on the website: generator tag, favicon, information page, "
+"footer"
+msgstr ""

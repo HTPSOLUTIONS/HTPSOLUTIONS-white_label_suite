@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- replaces the Odoo logo component (customer display “Powered by”, screens) -->
+    <t t-name="white_label_kit_pos.Logo">
+        <div class="o_wl_pos_logo" t-att-class="this.props.class" t-att-style="this.props.style">
+            <img src="/white_label_kit/logo" alt=""/>
+        </div>
+    </t>
+</templates>
