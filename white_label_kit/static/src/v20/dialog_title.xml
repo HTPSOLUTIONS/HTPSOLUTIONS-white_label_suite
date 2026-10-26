@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- Odoo 20: dialogs without a title are titled “Odoo” -->
+    <t t-inherit="web.Dialog.header" t-inherit-mode="extension">
+        <xpath expr="//t[@t-out='window.String(this.props.title)']" position="replace">
+            <t t-out="(window.String(this.props.title) === 'Odoo' and window.odoo and window.odoo.__session_info__ and window.odoo.__session_info__.white_label_kit and window.odoo.__session_info__.white_label_kit.active and window.odoo.__session_info__.white_label_kit.replace_texts) ? window.odoo.__session_info__.white_label_kit.name : window.String(this.props.title)"/>
+        </xpath>
+    </t>
+</templates>

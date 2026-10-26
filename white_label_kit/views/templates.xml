@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Browser tab: title and favicon of every page (backend, login, portal, website…) -->
+    <template id="layout" inherit_id="web.layout" name="White Label: title and favicon">
+        <xpath expr="//title" position="replace">
+            <t t-set="wl_brand" t-value="env['white.label.config'].sudo()._brand_data()"/>
+            <title t-out="title if (title and not (wl_brand.get('active') and wl_brand.get('replace_texts') and title == 'Odoo')) else (wl_brand.get('name') if wl_brand.get('active') and wl_brand.get('replace_texts') else 'Odoo')"/>
+        </xpath>
+        <xpath expr="//link[@rel='shortcut icon']" position="attributes">
+            <attribute name="t-att-href">x_icon or ('/white_label_kit/icon/64?v=%s' % wl_brand.get('stamp', '0') if wl_brand.get('active') else '/web/static/img/favicon.ico')</attribute>
+            <attribute name="type">image/png</attribute>
+        </xpath>
+        <!-- brand colors and home-screen style for every page (backend, login, Enterprise home screen) -->
+        <xpath expr="//body" position="attributes">
+            <attribute name="t-att-class">((body_classname or '') + ' ' + env['white.label.config'].sudo()._brand_data().get('body_class', '')) if env['white.label.config'].sudo()._brand_data().get('active') else body_classname</attribute>
+            <attribute name="t-att-style">env['white.label.config'].sudo()._brand_data().get('css_vars') or None</attribute>
+        </xpath>
+    </template>
+
+    <!-- “Powered by Odoo” of the footers (portal, website, survey…): hidden or “Powered by <brand>” -->
+    <template id="brand_promotion_message" inherit_id="web.brand_promotion_message" name="White Label: powered by">
+        <xpath expr="//t[@t-out]" position="replace">
+            <t t-set="wl_brand" t-value="env['white.label.config'].sudo()._brand_data()"/>
+            <t t-if="not wl_brand.get('active')">
+                <t t-out="final_message % (odoo_logo, _message and ('- ' + _message) or '')"/>
+            </t>
+            <t t-elif="wl_brand.get('powered_by') == 'brand'">
+                <span class="o_white_label_powered_by">Powered by
+                    <a t-if="wl_brand.get('website')" t-att-href="wl_brand['website']" target="_blank" rel="noopener"><t t-out="wl_brand['name']"/></a>
+                    <strong t-else="" t-out="wl_brand['name']"/>
+                </span>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Login page -->
+    <template id="login_layout" inherit_id="web.login_layout" name="White Label: login page">
+        <xpath expr="//a[@href='/web/database/manager']" position="attributes">
+            <attribute name="t-if">not env['white.label.config'].sudo()._brand_data().get('hide_db_manager_link')</attribute>
+        </xpath>
+        <!-- the Odoo link is hidden, not removed: other modules that change it keep working -->
+        <xpath expr="//a[contains(@href, 'utm_medium=auth')]" position="attributes">
+            <attribute name="t-if">not env['white.label.config'].sudo()._brand_data().get('active')</attribute>
+        </xpath>
+        <xpath expr="//a[contains(@href, 'utm_medium=auth')]" position="after">
+            <t t-set="wl_brand" t-value="env['white.label.config'].sudo()._brand_data()"/>
+            <t t-if="wl_brand.get('active') and wl_brand.get('powered_by') == 'brand'">
+                <a t-if="wl_brand.get('website')" t-att-href="wl_brand['website']" target="_blank" rel="noopener">Powered by <span t-out="wl_brand['name']"/></a>
+                <span t-else="">Powered by <span t-out="wl_brand['name']"/></span>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Backend: installed-app icon and browser theme color (Odoo's tags are hidden, not removed, when the branding is on) -->
+    <template id="webclient_bootstrap" inherit_id="web.webclient_bootstrap" name="White Label: backend icons">
+        <xpath expr="//link[@rel='apple-touch-icon']" position="attributes">
+            <attribute name="t-if">not env['white.label.config'].sudo()._brand_data().get('active')</attribute>
+        </xpath>
+        <xpath expr="//link[@rel='apple-touch-icon']" position="after">
+            <link t-if="env['white.label.config'].sudo()._brand_data().get('active')" rel="apple-touch-icon"
+                  t-att-href="'/white_label_kit/icon/180?v=%s' % env['white.label.config'].sudo()._brand_data().get('stamp', '0')"/>
+        </xpath>
+        <xpath expr="//meta[@name='theme-color']" position="attributes">
+            <attribute name="t-if">not env['white.label.config'].sudo()._brand_data().get('active')</attribute>
+        </xpath>
+        <xpath expr="//meta[@name='theme-color']" position="after">
+            <meta t-if="env['white.label.config'].sudo()._brand_data().get('active')" name="theme-color"
+                  t-att-content="env['white.label.config'].sudo()._brand_data().get('color')"/>
+        </xpath>
+    </template>
+</odoo>

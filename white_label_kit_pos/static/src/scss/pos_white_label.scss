@@ -1,0 +1,22 @@
+// Only when the branding is on: <body> then has the o_wl_active class and the --wl-logo variable (set by white_label_kit)
+// POS top bar / saver screen logo: the brand logo
+.o_wl_active .pos-logo {
+    --navbar-logo: var(--wl-logo, url("/white_label_kit/logo"));
+}
+// Odoo 17 - 18: the logo is an <img>
+.o_wl_active {
+    img.pos-logo, img[src="/web/static/img/logo.png"], img[src*="/web/static/img/odoo_logo"] {
+        content: var(--wl-logo, url("/white_label_kit/logo"));
+        object-fit: contain;
+    }
+}
+.o_wl_pos_logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+}
