@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- <meta name="generator" content="Odoo"/> -->
+    <template id="layout" inherit_id="website.layout" name="White Label: generator">
+        <xpath expr="//meta[@name='generator']" position="attributes">
+            <attribute name="t-att-content">env['white.label.config'].sudo()._brand_data().get('name') or 'Odoo'</attribute>
+        </xpath>
+    </template>
+
+    <!-- /website/info: Odoo's lines hidden (not removed) when the branding is on -->
+    <template id="show_website_info" inherit_id="website.show_website_info" name="White Label: information page">
+        <xpath expr="//h1/small[@groups='base.group_no_one']" position="attributes">
+            <attribute name="t-if">not env['white.label.config'].sudo()._brand_data().get('active')</attribute>
+        </xpath>
+        <xpath expr="//h1/small[@groups='base.group_no_one']" position="after">
+            <small t-if="env['white.label.config'].sudo()._brand_data().get('active')" groups="base.group_no_one">Version <t t-out="version.get('server_version')"/></small>
+        </xpath>
+        <xpath expr="//h1/following-sibling::p[1]" position="attributes">
+            <attribute name="t-if">not env['white.label.config'].sudo()._brand_data().get('active')</attribute>
+        </xpath>
+        <xpath expr="//h1/following-sibling::p[1]" position="after">
+            <p t-if="env['white.label.config'].sudo()._brand_data().get('active')">Information about this instance: <t t-out="res_company.name"/></p>
+        </xpath>
+    </template>
+</odoo>
