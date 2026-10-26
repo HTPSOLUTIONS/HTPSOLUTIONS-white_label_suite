@@ -12,5 +12,6 @@
         'web.assets_backend': ['white_label_kit_enterprise/static/src/scss/*.scss'],
         'web.assets_frontend': ['white_label_kit_enterprise/static/src/scss/*.scss'],
     },
+    'images': ['static/description/banner.png'],
     'installable': True,
 }
