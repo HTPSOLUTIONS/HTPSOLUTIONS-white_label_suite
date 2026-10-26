@@ -1,7 +1,7 @@
 {
     'name': 'White Label Portal',
     'summary': 'Your company look on the customer portal documents (quotations, invoices…)',
-    'version': '17.0.1.0.2',
+    'version': '17.0.1.0.3',
     'category': 'Productivity',
     'author': 'HIGHTECH PRO',
     'website': 'https://htp.solutions',

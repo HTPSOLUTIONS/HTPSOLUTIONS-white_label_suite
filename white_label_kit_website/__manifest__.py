@@ -1,7 +1,7 @@
 {
     'name': 'White Label Website',
     'summary': 'Your company look on the website: generator tag, favicon, information page, footer',
-    'version': '17.0.1.0.2',
+    'version': '17.0.1.0.3',
     'category': 'Productivity',
     'author': 'HIGHTECH PRO',
     'website': 'https://htp.solutions',

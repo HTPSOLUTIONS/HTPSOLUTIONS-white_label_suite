@@ -1,7 +1,7 @@
 {
     'name': 'White Label Live Chat',
     'summary': 'Your company look on the live chat support page',
-    'version': '17.0.1.0.2',
+    'version': '17.0.1.0.3',
     'category': 'Productivity',
     'author': 'HIGHTECH PRO',
     'website': 'https://htp.solutions',

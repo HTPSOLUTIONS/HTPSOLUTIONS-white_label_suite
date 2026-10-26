@@ -1,0 +1,254 @@
+// White Label dashboard (Settings > White Label), back end only.
+// Colours come from Odoo's theme variables: Odoo compiles this file once with its light values and once with its dark
+// values (dark mode), so the page, the cards, the texts and the borders always contrast. The previews of the login page,
+// the browser tab and the chat stay light on purpose (they show light screens): their texts have explicit dark colours.
+.o_wl_dashboard {
+    --wl-dash-page: #{$o-webclient-background-color};
+    --wl-dash-surface: #{$o-view-background-color};
+    --wl-dash-text: #{$o-main-text-color};
+    // secondary texts: the text colour toned down towards the card, readable (WCAG AA) in both modes and in every
+    // version (Odoo 17-18 Community already use a grey #495057 as main text colour)
+    --wl-dash-muted: color-mix(in srgb, var(--wl-dash-text) 85%, var(--wl-dash-surface));
+    --wl-dash-line: #{$border-color};
+    --wl-dash-soft: #{rgba($o-main-text-color, 0.06)};
+    --wl-dash-accent: var(--wl-accent, #{$o-action});
+    --wl-dash-shadow: 0 1px 3px #{rgba($o-black, 0.12)};
+
+    height: 100%;
+    overflow-y: auto;
+    background: var(--wl-dash-page);
+    color: var(--wl-dash-text);
+    .text-muted, .form-text { color: var(--wl-dash-muted) !important; }
+    .o_wl_dash_header {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: var(--wl-dash-surface);
+        border-bottom: 1px solid var(--wl-dash-line);
+        padding: 12px 24px;
+    }
+    .o_wl_master_switch {
+        padding: 6px 12px 6px 44px;
+        border-radius: 999px;
+        border: 1px solid var(--wl-dash-line);
+        white-space: nowrap;
+        &.o_wl_on {
+            border-color: var(--wl-color);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--wl-color) 18%, transparent);
+        }
+    }
+    .o_wl_off_notice {
+        display: flex;
+        align-items: center;
+        margin: 16px 24px 0;
+        padding: 10px 14px;
+        border-radius: 8px;
+        background: rgba(255, 193, 7, 0.14);
+        border: 1px solid rgba(255, 193, 7, 0.45);
+        font-size: 0.9rem;
+    }
+    .o_wl_segmented {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    .o_wl_dash_body {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr) 380px;
+        gap: 24px;
+        padding: 24px;
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+    .o_wl_dash_nav {
+        position: sticky;
+        top: 86px;
+        align-self: start;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        button {
+            text-align: left;
+            border: 0;
+            background: transparent;
+            border-radius: 10px;
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--wl-dash-text);
+            &:hover { background: var(--wl-dash-soft); }
+            &.active {
+                background: var(--wl-dash-surface);
+                box-shadow: var(--wl-dash-shadow);
+                font-weight: 600;
+                color: var(--wl-dash-accent);
+            }
+        }
+    }
+    .o_wl_card {
+        background: var(--wl-dash-surface);
+        border-radius: 14px;
+        box-shadow: var(--wl-dash-shadow);
+        padding: 20px 22px;
+        margin-bottom: 18px;
+        h4 { margin-bottom: 4px; }
+        .o_wl_card_sub { color: var(--wl-dash-muted); margin-bottom: 16px; font-size: 0.9rem; }
+    }
+    .o_wl_field {
+        margin-bottom: 14px;
+        label { font-weight: 600; margin-bottom: 4px; display: block; }
+        .form-text { margin-top: 2px; }
+    }
+    .o_wl_toggle {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--wl-dash-line);
+        &:last-child { border-bottom: 0; }
+        .form-check-input { width: 2.6em; height: 1.4em; margin-top: 0.15em; cursor: pointer; flex: none; }
+        .o_wl_toggle_title { font-weight: 600; }
+        .o_wl_toggle_help { color: var(--wl-dash-muted); font-size: 0.88rem; }
+    }
+    .o_wl_image_picker {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        .o_wl_image_preview {
+            width: 88px;
+            height: 88px;
+            border-radius: 12px;
+            border: 1px dashed var(--wl-dash-line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // checkerboard: shows the transparent parts of a logo, light in both modes
+            background: repeating-conic-gradient(#f2f2f2 0% 25%, #fff 0% 50%) 50% / 16px 16px;
+            color: #4b5563;
+            overflow: hidden;
+            flex: none;
+            .text-muted { color: #4b5563 !important; }
+            img { max-width: 100%; max-height: 100%; object-fit: contain; }
+            &.o_wl_wide { width: 180px; }
+        }
+    }
+    .o_wl_choice_grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 12px;
+        .o_wl_choice {
+            border: 2px solid transparent;
+            border-radius: 12px;
+            padding: 6px;
+            cursor: pointer;
+            background: var(--wl-dash-soft);
+            text-align: center;
+            &.active { border-color: var(--wl-dash-accent); background: color-mix(in srgb, var(--wl-dash-accent) 10%, transparent); }
+            .o_wl_choice_swatch {
+                @include wl-home-background;
+                height: 64px;
+                border-radius: 8px;
+                margin-bottom: 6px;
+            }
+        }
+    }
+    .o_wl_companion {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--wl-dash-line);
+        &:last-child { border-bottom: 0; }
+        .o_wl_companion_icon {
+            width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            background: color-mix(in srgb, var(--wl-dash-accent) 14%, transparent); color: var(--wl-dash-accent);
+            font-size: 1.2rem; flex: none;
+        }
+    }
+    // live preview
+    .o_wl_preview {
+        position: sticky;
+        top: 86px;
+        align-self: start;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+    .o_wl_preview_block {
+        background: var(--wl-dash-surface);
+        border-radius: 14px;
+        box-shadow: var(--wl-dash-shadow);
+        overflow: hidden;
+        .o_wl_preview_title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--wl-dash-muted);
+            padding: 8px 12px 0;
+        }
+    }
+    .o_wl_mock_tab {
+        margin: 8px 12px 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: #eceef1;
+        color: #1f2937;
+        border-radius: 10px 10px 0 0;
+        padding: 8px 12px;
+        width: fit-content;
+        max-width: 100%;
+        img { width: 16px; height: 16px; border-radius: 3px; }
+        span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.85rem; }
+    }
+    .o_wl_mock_login {
+        background: #f3f4f6;
+        color: #1f2937;
+        padding: 16px;
+        .o_wl_mock_login_card {
+            background: #fff; border-radius: 10px; padding: 14px; max-width: 220px; margin: 0 auto; text-align: center;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            img { max-height: 40px; max-width: 140px; margin-bottom: 10px; }
+            .o_wl_mock_input { height: 22px; border-radius: 5px; background: #eef0f3; margin-bottom: 6px; }
+            .o_wl_mock_button { height: 24px; border-radius: 5px; margin: 8px 0; background: var(--wl-color, #2c3e50); }
+            .o_wl_mock_powered { font-size: 0.72rem; color: #6c757d; border-top: 1px solid #eee; padding-top: 6px; }
+        }
+    }
+    .o_wl_mock_home {
+        @include wl-home-background;
+        height: 170px;
+        padding: 14px;
+        color: #fff;
+        &.o_wl_home_default { color: var(--wl-dash-text); }
+        display: flex;
+        flex-direction: column;
+        .o_wl_mock_home_logo { height: 22px; max-width: 70%; object-fit: contain; }
+        .o_wl_mock_home_apps {
+            display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-top: 18px;
+            div { aspect-ratio: 1; border-radius: 8px; background: rgba(255, 255, 255, 0.9); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18); }
+        }
+    }
+    .o_wl_mock_mail {
+        padding: 12px 14px;
+        font-size: 0.82rem;
+        .o_wl_mock_mail_footer {
+            margin-top: 10px; border-top: 1px solid var(--wl-dash-line); padding-top: 6px; color: var(--wl-dash-muted);
+            font-size: 0.72rem; text-align: center;
+        }
+    }
+    .o_wl_mock_chat {
+        display: flex; gap: 10px; padding: 12px 14px;
+        img, .o_wl_mock_avatar { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; flex: none; }
+        .o_wl_mock_avatar { background: var(--wl-color, #2c3e50); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+        .o_wl_mock_bubble { background: #f1f3f5; color: #1f2937; border-radius: 4px 12px 12px 12px; padding: 8px 10px; font-size: 0.82rem; }
+    }
+}
+@media (max-width: 1199.98px) {
+    .o_wl_dashboard .o_wl_dash_body { grid-template-columns: 200px minmax(0, 1fr); }
+    .o_wl_dashboard .o_wl_preview { grid-column: 1 / -1; position: static; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+}
+@media (max-width: 767.98px) {
+    .o_wl_dashboard .o_wl_dash_body { grid-template-columns: 1fr; padding: 12px; }
+    .o_wl_dashboard .o_wl_dash_nav { position: static; flex-direction: row; overflow-x: auto; }
+}

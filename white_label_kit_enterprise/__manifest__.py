@@ -1,7 +1,7 @@
 {
     'name': 'White Label Enterprise',
     'summary': 'Your background and logo (position and size of your choice) on the Enterprise home screen',
-    'version': '17.0.1.0.2',
+    'version': '17.0.1.0.3',
     'category': 'Productivity',
     'author': 'HIGHTECH PRO',
     'website': 'https://htp.solutions',
