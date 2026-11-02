@@ -1,6 +1,7 @@
 {
     'name': 'White Label Website',
-    'summary': 'Your company look on the website: generator tag, favicon, information page, footer',
+    'summary': "Your company look on the website: generator tag, favicon, information page, footer. White label Odoo "
+               "website, debranding: remove Powered by Odoo from the website. Marque blanche du site web Odoo.",
     'version': '19.0.1.0.3',
     'category': 'Productivity',
     'author': 'HIGHTECH PRO',
