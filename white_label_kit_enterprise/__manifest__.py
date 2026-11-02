@@ -1,6 +1,8 @@
 {
     'name': 'White Label Enterprise',
-    'summary': 'Your background and logo (position and size of your choice) on the Enterprise home screen',
+    'summary': "Your background and logo (position and size of your choice) on the Enterprise home screen. White "
+               "label Odoo Enterprise, debranding of the home page. Marque blanche : fond et logo de l'écran "
+               "d'accueil Odoo Enterprise.",
     'version': '18.0.1.0.3',
     'category': 'Productivity',
     'author': 'HIGHTECH PRO',

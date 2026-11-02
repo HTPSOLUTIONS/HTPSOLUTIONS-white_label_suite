@@ -1,6 +1,8 @@
 {
     'name': 'White Label Kit',
-    'summary': 'Make your Odoo look like your company: name, logo, icon, colors, home screen, e-mails',
+    'summary': "Make your Odoo look like your company: name, logo, icon, colors, home screen, e-mails. White label "
+               "Odoo, white-label, debranding, rebranding: remove Odoo branding, remove Powered by Odoo. Marque "
+               "blanche Odoo : logo, couleurs, enlever la marque Odoo.",
     'description': """
 White Label
 ===========

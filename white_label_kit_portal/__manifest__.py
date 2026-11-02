@@ -1,6 +1,7 @@
 {
     'name': 'White Label Portal',
-    'summary': 'Your company look on the customer portal documents (quotations, invoices…)',
+    'summary': "Your company look on the customer portal documents (quotations, invoices…). White label Odoo portal, "
+               "debranding: remove Odoo branding from the portal. Marque blanche du portail client Odoo.",
     'version': '18.0.1.0.3',
     'category': 'Productivity',
     'author': 'HIGHTECH PRO',
