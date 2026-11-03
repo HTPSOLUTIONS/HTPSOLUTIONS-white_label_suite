@@ -1,7 +1,7 @@
 {
     'name': 'Brand Kit – Point of Sale',
     'summary': "Your company look in the Point of Sale: logo, receipts, customer display. White label Odoo POS, "
-               "debranding: remove Powered by Odoo from POS receipts. Marque blanche de la caisse (point de vente) "
+               "rebranding: remove Powered by Odoo from POS receipts. Marque blanche de la caisse (point de vente) "
                "Odoo.",
     'version': '19.0.1.0.3',
     'category': 'Productivity',
