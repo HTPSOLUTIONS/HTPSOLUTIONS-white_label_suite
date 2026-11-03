@@ -42,7 +42,7 @@ Enabling a companion never installs the application.
 | `white_label_kit_livechat` | im_livechat | “Website Live Chat Powered by Odoo” support page |
 | `white_label_kit_enterprise` | web_enterprise | Enterprise home screen and login background, logo above the apps (position and size), menu search bar |
 
-## Works alongside other debranding modules
+## Works alongside other branding modules
 
 Modules that already remove “Powered by Odoo” (login page, portal, POS receipt…) can stay installed:
 
@@ -54,7 +54,7 @@ Modules that already remove “Powered by Odoo” (login page, portal, POS recei
 
 - It keeps Odoo's copyright notice (Settings > About) and the license files of the source code.
 - It does not touch the Enterprise subscription mechanisms (expiration warnings, registration, “My Subscription”
-  for administrators). Debranding is about what your users see, not about the license.
+  for administrators). Branding is about what your users see, not about the license.
 - The database manager page (`/web/database/manager`) runs without a database, so no installed module can change it:
   close it with `list_db = False` in the server configuration.
 - Content written by people (website pages, product descriptions, e-mail templates you wrote) is never modified.

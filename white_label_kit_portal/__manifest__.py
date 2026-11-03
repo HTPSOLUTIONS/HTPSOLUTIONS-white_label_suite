@@ -1,7 +1,7 @@
 {
     'name': 'Brand Kit – Portal',
-    'summary': "Your company look on the customer portal documents (quotations, invoices…). White label Odoo portal, "
-               "debranding: remove Odoo branding from the portal. Marque blanche du portail client Odoo.",
+    'summary': "Your company look on the customer portal documents (quotations, invoices...). White label Odoo portal, "
+               "rebranding: remove Odoo branding from the portal. Marque blanche du portail client Odoo.",
     'version': '17.0.1.0.3',
     'category': 'Productivity',
     'author': 'HIGHTECH PRO',
