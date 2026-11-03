@@ -1,10 +1,10 @@
 {
-    'name': 'White Label Kit',
+    'name': 'Brand Kit – Odoo Your Way',
     'summary': "Make your Odoo look like your company: name, logo, icon, colors, home screen, e-mails. White label "
                "Odoo, white-label, debranding, rebranding: remove Odoo branding, remove Powered by Odoo. Marque "
                "blanche Odoo : logo, couleurs, enlever la marque Odoo.",
     'description': """
-White Label
+Brand Kit
 ===========
 Make your Odoo look like your company, from one dashboard with a live preview.
 Nothing changes when the module is installed: choose your settings, then switch on “Apply my branding”.
@@ -44,7 +44,7 @@ Nothing changes when the module is installed: choose your settings, then switch 
             'white_label_kit/static/src/scss/white_label_kit.scss',
         ],
     },
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/banner.gif'],
     'post_init_hook': 'post_init_hook',
     'uninstall_hook': 'uninstall_hook',
     'application': True,

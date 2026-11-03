@@ -1,5 +1,5 @@
 {
-    'name': 'White Label Enterprise',
+    'name': 'Brand Kit – Home Screen',
     'summary': "Your background and logo (position and size of your choice) on the Enterprise home screen. White "
                "label Odoo Enterprise, debranding of the home page. Marque blanche : fond et logo de l'écran "
                "d'accueil Odoo Enterprise.",
@@ -14,6 +14,6 @@
         'web.assets_backend': ['white_label_kit_enterprise/static/src/scss/*.scss'],
         'web.assets_frontend': ['white_label_kit_enterprise/static/src/scss/*.scss'],
     },
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/banner.gif'],
     'installable': True,
 }
