@@ -1,6 +1,6 @@
 {
     'name': 'Brand Kit – Live Chat',
-    'summary': "Your company look on the live chat support page. White label Odoo live chat, debranding: remove Odoo "
+    'summary': "Your company look on the live chat support page. White label Odoo live chat, rebranding: remove Odoo "
                "branding from the chat page. Marque blanche du chat en direct Odoo.",
     'version': '20.0.1.0.3',
     'category': 'Productivity',
