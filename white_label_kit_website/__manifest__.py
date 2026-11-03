@@ -1,5 +1,5 @@
 {
-    'name': 'White Label Website',
+    'name': 'Brand Kit – Website',
     'summary': "Your company look on the website: generator tag, favicon, information page, footer. White label Odoo "
                "website, debranding: remove Powered by Odoo from the website. Marque blanche du site web Odoo.",
     'version': '17.0.1.0.3',
@@ -12,6 +12,6 @@
     'data': ['views/website_templates.xml'],
     'post_init_hook': 'post_init_hook',
     'uninstall_hook': 'uninstall_hook',
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/banner.gif'],
     'installable': True,
 }
